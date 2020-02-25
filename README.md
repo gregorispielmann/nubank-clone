@@ -53,7 +53,6 @@ $ git clone https://github.com/gregorispielmann/nubank-clone.git
 
 ```
 $ yarn
-
 ```
 
 3. If you want to run the iOS project then you need to run the command below
