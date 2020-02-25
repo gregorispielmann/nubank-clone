@@ -64,12 +64,6 @@ $ cd ios && pod install && cd ..
 
 ---
 
-<!-- LICENSE -->
-
-## License
-
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
-
 <!-- CONTACT -->
 
 ## Contact
