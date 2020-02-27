@@ -4,6 +4,7 @@ import {Animated} from 'react-native';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 export const Container = styled.View`
+  font-family: 'Montserrat';
   flex: 1;
   background: #8b10ae;
   padding-top: ${getStatusBarHeight() + 20}px;
@@ -17,50 +18,15 @@ export const Content = styled.View`
   z-index: 5;
 `;
 
-export const Card = styled(Animated.View)`
-  flex: 1;
-  background: #fff;
-  border-radius: 4px;
-  margin: 0 20px;
-
+export const CardContainer = styled(Animated.ScrollView).attrs({
+  horizontal: true,
+  showsHorizontalScrollIndicator: false,
+  pagingEnabled: true,
+  contentContainerStyle: {},
+})`
   height: 100%;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-`;
-
-export const CardHeader = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-`;
-
-export const CardContent = styled.View`
-  flex: 1;
-  padding: 0 30px;
-  justify-content: center;
-`;
-
-export const Title = styled.Text`
-  font-size: 13px;
-  color: #999;
-`;
-
-export const Description = styled.Text`
-  font-size: 32px;
-  margin-top: 3px;
-  color: #333;
-`;
-
-export const CardFooter = styled.View`
-  background: #eee;
-  border-radius: 3px;
-  padding: 30px;
-`;
-
-export const Annotation = styled.Text`
-  font-size: 12px;
-  color: #333;
 `;

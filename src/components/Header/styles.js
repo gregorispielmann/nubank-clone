@@ -14,6 +14,8 @@ export const Top = styled.View`
 export const Logo = styled.Image``;
 
 export const Title = styled.Text`
+  font-family: 'Montserrat';
+
   font-size: 18px;
   color: #fff;
   font-weight: bold;

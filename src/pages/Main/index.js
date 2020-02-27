@@ -1,29 +1,20 @@
 import React from 'react';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {Container, Content, CardContainer} from './styles';
 
-import {
-  Container,
-  Content,
-  Card,
-  CardHeader,
-  CardContent,
-  CardFooter,
-  Title,
-  Description,
-  Annotation,
-} from './styles';
-
-import {Animated} from 'react-native';
+import {Animated, Dimensions} from 'react-native';
 import {PanGestureHandler, State} from 'react-native-gesture-handler';
 
 import Menu from '~/components/Menu';
 import Header from '~/components/Header';
 import Tabs from '~/components/Tabs';
+import Card from '~/components/Card';
 
 export default function Main() {
   const translateY = new Animated.Value(0);
   let offset = 0;
+
+  const screenHeight = Dimensions.get('screen').height;
 
   const animatedEvent = Animated.event(
     [
@@ -54,11 +45,11 @@ export default function Main() {
       }
 
       Animated.timing(translateY, {
-        toValue: opened ? 380 : 0,
+        toValue: opened ? 450 : 0,
         duration: 200,
         useNativeDriver: true,
       }).start(() => {
-        offset = opened ? 380 : 0;
+        offset = opened ? 450 : 0;
         translateY.setOffset(offset);
         translateY.setValue(0);
       });
@@ -75,33 +66,36 @@ export default function Main() {
         <PanGestureHandler
           onGestureEvent={animatedEvent}
           onHandlerStateChange={onHandlerStateChange}>
-          <Card
+          <CardContainer
             style={{
               transform: [
                 {
                   translateY: translateY.interpolate({
-                    inputRange: [-380, 0, 380],
-                    outputRange: [-1, 0, 380],
+                    inputRange: [-450, 0, 450],
+                    outputRange: [-1, 0, screenHeight / 2 + 40],
                     extrapolate: 'clamp',
                   }),
                 },
               ],
             }}>
-            <CardHeader>
-              <Icon name="attach-money" size={28} color="#333" />
-              <Icon name="visibility-off" size={28} color="#333" />
-            </CardHeader>
-            <CardContent>
-              <Title>Saldo Disponível</Title>
-              <Description>R$ 197.511,30</Description>
-            </CardContent>
-            <CardFooter>
-              <Annotation>
-                Transferência de R$ 20,00 recebida de João da Silva Sauro hoje
-                as 17:00h
-              </Annotation>
-            </CardFooter>
-          </Card>
+            <Card
+              iconName="credit-card"
+              iconTitle="Cartão de Crédito"
+              title="FATURA ATUAL"
+              description="R$ 847,21"
+              showDescription
+              annotation="Compra mais recente em Facebook.com no valor de R$ 29,45"
+              iconFooter="computer"
+            />
+            <Card
+              iconName="account-balance-wallet"
+              iconTitle="NuConta"
+              title="Saldo disponível"
+              description="R$ 25,50"
+              annotation="Transferência de R$ 503,00 para Fulano de Tal sexta"
+              iconFooter="done"
+            />
+          </CardContainer>
         </PanGestureHandler>
       </Content>
 

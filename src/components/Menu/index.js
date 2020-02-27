@@ -1,4 +1,5 @@
 import React from 'react';
+import {Text} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import QRCode from 'react-native-qrcode-svg';
@@ -6,6 +7,8 @@ import QRCode from 'react-native-qrcode-svg';
 import {
   Container,
   QRContainer,
+  AccountContainer,
+  Account,
   Nav,
   NavItem,
   NavText,
@@ -23,8 +26,25 @@ export default function Menu({translateY}) {
         }),
       }}>
       <QRContainer>
-        <QRCode value="http://pixeltech.com.br" size={70} />
+        <QRCode
+          value="http://pixeltech.com.br"
+          size={70}
+          backgroundColor="#fff"
+          color="#8b10ae"
+        />
       </QRContainer>
+      <AccountContainer>
+        <Account>
+          Banco
+          <Text style={{fontWeight: 'bold'}}> 260 - Nu Pagamentos S.A.</Text>
+        </Account>
+        <Account>
+          Agência <Text style={{fontWeight: 'bold'}}>0001</Text>
+        </Account>
+        <Account>
+          Conta <Text style={{fontWeight: 'bold'}}>33333333-3</Text>
+        </Account>
+      </AccountContainer>
       <Nav>
         <NavItem>
           <Icon name="help-outline" size={20} color="#fff" />
@@ -45,7 +65,10 @@ export default function Menu({translateY}) {
       </Nav>
 
       <SignOutButton onPress={() => {}}>
-        <SignOutButtonText>Sair do App</SignOutButtonText>
+        <SignOutButtonText>SAIR DA CONTA</SignOutButtonText>
+      </SignOutButton>
+      <SignOutButton onPress={() => {}}>
+        <SignOutButtonText>TROCAR DE CONTA</SignOutButtonText>
       </SignOutButton>
     </Container>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Container, TabsContainer, TabItem, TabText} from './styles';
 
 export default function Tabs({translateY}) {
@@ -26,11 +27,19 @@ export default function Tabs({translateY}) {
           <TabText>Indicar amigos</TabText>
         </TabItem>
         <TabItem>
-          <Icon name="chat-bubble-outline" size={24} color="#fff" />
+          <Icon name="smartphone" size={24} color="#fff" />
+          <TabText>Recarga de celuar</TabText>
+        </TabItem>
+        <TabItem>
+          <Icon name="attach-money" size={24} color="#fff" />
           <TabText>Cobrar</TabText>
         </TabItem>
         <TabItem>
-          <Icon name="arrow-downard" size={24} color="#fff" />
+          <Icon name="monetization-on" size={24} color="#fff" />
+          <TabText>Empréstimos</TabText>
+        </TabItem>
+        <TabItem>
+          <Icon name="arrow-downward" size={24} color="#fff" />
           <TabText>Depositar</TabText>
         </TabItem>
         <TabItem>
@@ -38,8 +47,24 @@ export default function Tabs({translateY}) {
           <TabText>Transferir</TabText>
         </TabItem>
         <TabItem>
-          <Icon name="lock" size={24} color="#fff" />
+          <Icon name="settings" size={24} color="#fff" />
+          <TabText>Ajustar limite</TabText>
+        </TabItem>
+        <TabItem>
+          <Icon name="help-outline" size={24} color="#fff" />
+          <TabText>Me ajuda</TabText>
+        </TabItem>
+        <TabItem>
+          <Icon2 name="barcode" size={24} color="#fff" />
+          <TabText>Pagar</TabText>
+        </TabItem>
+        <TabItem>
+          <Icon name="lock-open" size={24} color="#fff" />
           <TabText>Bloquear cartão</TabText>
+        </TabItem>
+        <TabItem>
+          <Icon2 name="credit-card-multiple" size={24} color="#fff" />
+          <TabText>Cartão virtual</TabText>
         </TabItem>
       </TabsContainer>
     </Container>

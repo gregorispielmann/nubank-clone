@@ -3,7 +3,7 @@ import {Animated} from 'react-native';
 
 export const Container = styled(Animated.View)`
   height: 100px;
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 
 export const TabsContainer = styled.ScrollView.attrs({
@@ -26,6 +26,9 @@ export const TabItem = styled.View`
 `;
 
 export const TabText = styled.Text`
+  font-family: 'Montserrat';
+  font-weight: 500;
+
   font-size: 13px;
   color: #fff;
 `;
