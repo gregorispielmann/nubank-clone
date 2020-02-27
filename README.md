@@ -13,8 +13,9 @@ This project is a Nubank interface clone and is made with Animations (Animated) 
 ### Screenshots
 
 <div style="display: flex; flex-direction: row;">
-  <img src="screenshots/screenshot1.png" width="45%">
-  <img src="screenshots/screenshot2.png" width="45%">
+  <img src="screenshots/screenshot0.png" width="30%">
+  <img src="screenshots/screenshot1.png" width="30%">
+  <img src="screenshots/screenshot2.png" width="30%">
 </div>
 
 ### Made With
